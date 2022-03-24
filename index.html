@@ -21,9 +21,14 @@
       <button>&lt;</button>
       <label>
         <span x-text="`${bpm} bpm`"></span>
-        <input type="checkbox" x-model="checked" x-ref="cb" />
+        <input type="checkbox" x-model="checked" />
       </label>
       <button>&gt;</button>
     </span>
+
+    <audio controls src="/woodblock.wav">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
   </body>
 </html>
