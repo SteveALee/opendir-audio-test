@@ -9,5 +9,9 @@
   },
   "devDependencies": {
     "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "alpinejs": "^3.9.2",
+    "tone": "^14.7.77"
   }
 }

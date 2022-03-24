@@ -4,10 +4,26 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Metronome</title>
+    <script type="module" src="/js/main.js"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <h1>Metronome</h1>
+
+    <span
+      data-widget="metronome"
+      x-data="WIDGETS.metronome({bpm: 110})"
+      class="metronome widget"
+      x-on:click="onClick($el, $event, $dispatch)"
+      x-on:metronome-start.window="onStart"
+      x-on:stop-sounds.window="onStop"
+    >
+      <button>&lt;</button>
+      <label>
+        <span x-text="`${bpm} bpm`"></span>
+        <input type="checkbox" x-model="checked" x-ref="cb" />
+      </label>
+      <button>&gt;</button>
+    </span>
   </body>
 </html>

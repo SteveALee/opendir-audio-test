@@ -1,8 +1,71 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+  --red: #c5004a;
+  --darkred: #7f0036;
+  --lightgray: #e0e0e0;
+  --gray: #c0c0c0;
+  --darkgray: #333;
+  --navy: #17050f;
+  --blue: #082840;
+  --white: #fff;
+  --widget-bg: lightblue;
+  --font-size: 23px;
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  font-size: var(--font-size);
+  color: var(--darkgray);
+  background-color: var(--white);
+}
+
+.hidden {
+  display: none;
+}
+
+/* metronome */
+.metronome input[type='checkbox'] {
+  transform: scale(1.8);
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+}
+.metronome {
+  width: 8rem;
+  height: 1.5rem;
+  border: solid 1px black;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+.metronome span {
+  color: var(--darkred);
+  font-weight: bold;
+}
+.metronome button {
+  background-color: var(--widget-bg);
+  border-radius: 0.25rem;
+}
+.metronome {
+  border-radius: 0.25rem;
+}
+.metronome label {
+  font-size: calc(var(--font-size) - 3px);
+}
+
+.widget {
+  background-color: var(--widget-bg);
+}
+
+main {
+  padding: 1rem;
 }
