@@ -29,19 +29,14 @@ export function metronome({
     stepper: stepper(min, max, step),
     starting: false,
 
-    async onClick($el, $event, $dispatch) {
-      console.log('click');
-      // not from unCheckOthers
-      $event.preventDefault(); // we control check box state
-      if (this.checked && $event.target.tagName == 'BUTTON') {
+    async onClick($event, $dispatch) {
+      if (!this.checked && $event.target.tagName == 'BUTTON') {
         const delta = $event.target.textContent == '<' ? -1 : 1;
         this.bpm = this.stepper(delta, this.bpm);
         writeStorage(key, this.bpm);
+        $event.preventDefault;
       } else {
-        console.log(this.checked);
-        this.checked = !this.checked;
-        console.log(this.checked);
-        if (this.checked) {
+        if (!this.checked) {
           this.starting = true;
           $dispatch('metronome-start');
         }
@@ -53,7 +48,6 @@ export function metronome({
     },
 
     onStart() {
-      console.log('start');
       if (!this.starting) {
         this.checked = false;
       }
@@ -61,15 +55,11 @@ export function metronome({
     },
 
     onStop() {
-      console.log('stop');
-
       this.checked = false;
       this.renderAudio();
     },
 
     renderAudio() {
-      console.log('render');
-      return;
       if (!player) {
         player = new Tone.Player('/woodblock.wav').toDestination();
         Tone.loaded().then(function () {

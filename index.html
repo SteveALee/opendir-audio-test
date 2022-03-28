@@ -5,16 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metronome</title>
-    <!---<script type="module" src="/js/main.js"></script>--->
+    <script type="module" src="/js/main.js"></script>
   </head>
   <body>
     <h1>Metronome</h1>
-    <!--
+
     <span
       data-widget="metronome"
       x-data="WIDGETS.metronome({bpm: 110})"
       class="metronome widget"
-      x-on:click="onClick($el, $event, $dispatch)"
+      x-on:click="onClick($event, $dispatch)"
       x-on:metronome-start.window="onStart"
       x-on:stop-sounds.window="onStop"
     >
@@ -25,7 +25,7 @@
       </label>
       <button>&gt;</button>
     </span>
-   -->
+
     <audio controls src="/sample-3s.mp3">
       Your browser does not support the
       <code>audio</code> element.
